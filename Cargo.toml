@@ -1,0 +1,25 @@
+[package]
+name = "gtk-rs-macros"
+version = "0.1.0"
+authors = ["Phil Proctor <philliptproctor@gmail.com>"]
+edition = "2018"
+description = "GTK Macros"
+repository = ""
+keywords = []
+categories = []
+license = "MIT"
+readme = "README.md"
+
+[workspace]
+members = [
+    "demo",
+    "macros",
+]
+
+[dependencies]
+gtk = { version = "0.7", features = ["v3_16"]}
+gio = "0.7"
+
+[[bin]]
+name = "gtk-rs-mac-demo"
+path = "demo/main.rs"
