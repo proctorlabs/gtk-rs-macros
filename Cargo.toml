@@ -17,7 +17,8 @@ members = [
 ]
 
 [dependencies]
-gtk = { version = "0.7", features = ["v3_16"]}
+# gtk = { git = "https://github.com/gtk-rs/gtk.git", features = ["v3_20"]}
+gtk = { version = "0.7", features = ["v3_20"]}
 gio = "0.7"
 gtk_macros = { path = "macros" }
 
