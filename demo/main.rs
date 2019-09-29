@@ -2,29 +2,16 @@ use gio::prelude::*;
 use gtk::prelude::*;
 use std::env::args;
 
-fn build_ui(application: &gtk::Application) {
-    let window = gtk::ApplicationWindow::new(application);
+use gtk::{ApplicationWindow, Builder};
 
-    window.set_title("First GTK+ Program");
-    window.set_border_width(10);
-    window.set_position(gtk::WindowPosition::Center);
-    window.set_default_size(350, 70);
+#[macro_use]
+extern crate gtk_macros;
 
-    let button = gtk::Button::new_with_label("Click me!");
-
-    window.add(&button);
-
-    window.show_all();
+glade_app! {
+    name: AppName,
+    file: "test.glade"
 }
 
 fn main() {
-    let application =
-        gtk::Application::new(Some("com.github.gtk-rs.examples.basic"), Default::default())
-            .expect("Initialization failed...");
-
-    application.connect_activate(|app| {
-        build_ui(app);
-    });
-
-    application.run(&args().collect::<Vec<_>>());
+    AppName::start();
 }

@@ -1,5 +1,5 @@
 [package]
-name = "gtk-macros"
+name = "gtk_macros"
 version = "0.1.0"
 authors = ["Phil Proctor <philliptproctor@gmail.com>"]
 edition = "2018"
@@ -10,5 +10,5 @@ quote = "1.0"
 syn = { version = "1.0", features = ["derive"] }
 
 [lib]
-name = "katalyst_macros"
+name = "gtk_macros"
 proc-macro = true
