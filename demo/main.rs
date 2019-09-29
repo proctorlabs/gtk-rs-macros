@@ -9,7 +9,9 @@ extern crate gtk_macros;
 
 glade_app! {
     name: AppName,
-    file: "test.glade"
+    file: "test.glade",
+    connect: {
+    }
 }
 
 fn main() {

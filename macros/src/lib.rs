@@ -56,16 +56,9 @@ impl GladeKeys {
             let k = key.ident.to_string();
             let v = key.val;
             match k.as_str() {
-                "file" => {
-                    result.file = parse_quote! {
-                        #v
-                    }
-                }
-                "name" => {
-                    result.name = parse_quote! {
-                        #v
-                    }
-                }
+                "file" => result.file = parse_quote! (#v),
+                "name" => result.name = parse_quote! (#v),
+                "connect" => {}
                 i => panic!("Unexpected key {}", i),
             };
         }
